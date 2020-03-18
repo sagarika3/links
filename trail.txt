@@ -1,0 +1,74 @@
+sagarikaachar2@brave-panda-u6bgb0.com
+
+sagarikaachar2@playful-raccoon-p61hns.com
+
+https://trailhead.salesforce.com/content/learn/modules/platform_dev_basics/platform_dev_basics_code--->Lightning Component Framework,Apex,Visualforce.
+
+http://christopheralunlewis.blogspot.com/2012/10/making-all-approval-comments-mandatory.html
+
+
+https://einsteinsagarika-developer-edition.ap16.force.com
+
+
+https://d.la2-c2-ukb.salesforceliveagent.com/chat/rest/
+
+
+Create Dynamic Menus | Einstein Bots Developer Cookbook ...
+
+
+Apex code to store values into custom object from Einsten bot in salesforce
+
+http://amitsalesforce.blogspot.com/2018/07/einstein-bots-with-apex-class-how-to.html
+
+
+Einstein Language for Cloud Kicks,L
+
+EffectiveDate < DATE(2016,2,1)
+
+https://focusonforce.com/certification-courses/#admin
+
+
+
+
+public class ValidateDate {
+    
+    public class ValidationInput{
+        @InvocableVariable
+        public List<String> GivenDate;
+    }
+    public class ValidationOutput {
+        @InvocableVariable
+        public List<String> errorMsg;
+    }
+    
+    @InvocableMethod(label='Validate Date')
+    Public static List<ValidationOutput> ValidateDate(List<ValidationInput> validation){
+        List<ValidationOutput> outputlist = new List<ValidationOutput>();
+        List<ValidationInput>  validate =new List<ValidationInput>();
+ 
+        if(validation !=null && !validation.isEmpty()){
+              ValidationInput input=new ValidationInput();
+            for(ValidationInput valid:validation ){
+                //  If((GivenDate >= {!date(today())}))
+                //input.GivenDate=valid.GivenDate;
+                input.GivenDate=valid GivenDate;
+                RestaurantSeatReservation__c res=new RestaurantSeatReservation__c();
+                res.Reservation__c=valid.GivenDate;
+            }
+                if(valid.GivenDate>=date.today()) {
+                    // ValidateDate date=new ValidateDate();
+                    try{
+                        insert res;
+                      ValidationOutput Output=new ValidationOutput();
+                        Output.errorMsg;
+                    }catch(Dmlexception e){
+                        System.debug('Method :ValidateDate  -- Error Occured');
+                        System.debug('Failed' +e.getMessage());
+                    }
+                    
+                }
+                return outputlist;
+            }
+        }
+    }
+}
